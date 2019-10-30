@@ -12,7 +12,7 @@ y = dataset.iloc[:, 13].values
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
 
 # Feature Scaling
 from sklearn.preprocessing import StandardScaler
@@ -50,7 +50,7 @@ plt.xlim(X1.min(), X1.max())
 plt.ylim(X2.min(), X2.max())
 for i, j in enumerate(np.unique(y_set)):
     plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, 1],
-                c = ListedColormap(('red', 'green', 'blue'))(i), label = j)
+                c = [ListedColormap(['red', 'green', 'blue'])(i)], label = j)
 plt.title('Logistic Regression (Training set)')
 plt.xlabel('PC1')
 plt.ylabel('PC2')
@@ -68,7 +68,7 @@ plt.xlim(X1.min(), X1.max())
 plt.ylim(X2.min(), X2.max())
 for i, j in enumerate(np.unique(y_set)):
     plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, 1],
-                c = ListedColormap(('red', 'green', 'blue'))(i), label = j)
+                c = [ListedColormap(['red', 'green', 'blue'])(i)], label = j)
 plt.title('Logistic Regression (Test set)')
 plt.xlabel('PC1')
 plt.ylabel('PC2')
